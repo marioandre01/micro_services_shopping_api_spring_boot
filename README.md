@@ -7,7 +7,7 @@
 
 
 <h1 align="center">
-  <img alt="logo-spring" title="logo-spring" src="src/main/resources/imgs/logo_spring_boot.svg" width="200px" />
+  <img alt="logo-spring" title="logo-spring" src="imgs/logo_spring_boot.svg" width="200px" />
   <br>
   micro_services_shopping_api_spring_boot
 </h1>
