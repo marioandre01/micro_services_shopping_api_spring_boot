@@ -1,0 +1,63 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### API - Micro Services ###
+user-api/.classpath
+user-api/.project
+user-api/.settings/
+user-api/target/
+user-api/.idea
+
+shopping-client/.classpath
+shopping-client/.project
+shopping-client/.settings/
+shopping-client/target/
+shopping-client/.idea
+
+product-api/.settings/
+product-api/target/
+product-api/.classpath
+product-api/.project
+product-api/.idea
+
+shopping-api/.classpath
+shopping-api/.project
+shopping-api/.settings/
+shopping-api/target/
+shopping-api/.idea
+
+
+/.metadata/
+
+*.iml
