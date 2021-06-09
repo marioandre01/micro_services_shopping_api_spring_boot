@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mario.backend.dto.ProductByCategoryDTO;
 import com.mario.backend.dto.ProductDTO;
-import com.mario.backend.product.exception.ProductNotFoundException;
+import com.mario.backend.exception.ProductNotFoundException;
 import com.mario.backend.product.service.ProductService;
 
 @RestController

@@ -1,6 +1,7 @@
 package com.mario.backend.user.service;
 
 import com.mario.backend.dto.UserDTO;
+import com.mario.backend.exception.UserNotFoundException;
 import com.mario.backend.user.convert.DTOConvert;
 import com.mario.backend.user.model.User;
 import com.mario.backend.user.repository.UserRepository;
@@ -47,7 +48,8 @@ public class UserService {
         if (user != null) {
             return DTOConvert.convertToUserDTO(user);
         }
-        return null;
+//      exceção para usuário que não existe  
+        throw new UserNotFoundException();
     }
     public List<UserDTO> queryByName(String name) {
         List<User> usuarios = userRepository.queryByNomeLike(name);

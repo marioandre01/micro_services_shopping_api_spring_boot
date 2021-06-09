@@ -3,7 +3,7 @@ package com.mario.backend.user.controller;
 import javax.annotation.PostConstruct;
 
 import com.mario.backend.dto.UserDTO;
-import com.mario.backend.user.exception.UserNotFoundException;
+import com.mario.backend.exception.UserNotFoundException;
 import com.mario.backend.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

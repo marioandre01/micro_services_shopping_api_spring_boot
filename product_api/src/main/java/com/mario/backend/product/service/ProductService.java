@@ -8,17 +8,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mario.backend.product.model.Product;
+import com.mario.backend.product.repository.CategoryRepository;
 import com.mario.backend.product.repository.ProductRepository;
 import com.mario.backend.dto.ProductByCategoryDTO;
 import com.mario.backend.dto.ProductDTO;
+import com.mario.backend.exception.CategoryNotFoundException;
+import com.mario.backend.exception.ProductNotFoundException;
 import com.mario.backend.product.convert.DTOConvert;
-import com.mario.backend.product.exception.ProductNotFoundException;
 
 @Service
 public class ProductService {
 	
 	@Autowired
 	private ProductRepository productRepository;
+	
+	@Autowired
+	private CategoryRepository categoryRepository;
 	
 	public List<ProductDTO> getAll() {
 		
@@ -51,11 +56,20 @@ public class ProductService {
 		if (product != null) {
 			return DTOConvert.convertToProductDTO(product);
 		}
-		
-		return null;
+//		exceção para produto não encontrado
+		throw new ProductNotFoundException();
 	}
 	
 	public ProductDTO save(ProductDTO productDTO) {
+		
+//		existsById - método do Spring Data(jpa) - verifica se um determinado Id existe no banco de dados, retornando apenas true ou false
+//		verifica se uma categoria existe antes de tentar cadastrar um produto
+		Boolean existsCategory = categoryRepository.existsById(productDTO.getCategory().getId());
+		
+//		Se informar uma categoria que não existe, será retornado o erro CategoryNotFoundException
+		if (!existsCategory) {
+			throw new CategoryNotFoundException();
+		}
 		
 		Product product = productRepository.save(Product.convertToProduct(productDTO));
 		
@@ -73,6 +87,7 @@ public class ProductService {
 			productRepository.delete(Product.get());
 		}
 		
-		return null;
+//		exceção para produto não encontrado
+		throw new ProductNotFoundException();
 	}
 }
