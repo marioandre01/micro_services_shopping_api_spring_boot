@@ -1,6 +1,7 @@
 package com.mario.backend.user.service;
 
-import com.mario.backend.user.dto.UserDTO;
+import com.mario.backend.dto.UserDTO;
+import com.mario.backend.user.convert.DTOConvert;
 import com.mario.backend.user.model.User;
 import com.mario.backend.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,20 +20,20 @@ public class UserService {
         List<User> usuarios = userRepository.findAll();
         return usuarios
                 .stream()
-                .map(UserDTO::convertToUserDTO)
+                .map(DTOConvert::convertToUserDTO)
                 .collect(Collectors.toList());
     }
 
     public UserDTO findById(long userId) {
         Optional<User> usuario = userRepository.findById(userId);
         if (usuario.isPresent()) {
-            return UserDTO.convertToUserDTO(usuario.get());
+            return DTOConvert.convertToUserDTO(usuario.get());
         }
         return null;
     }
     public UserDTO save(UserDTO userDTO) {
         User user = userRepository.save(User.convertToUser(userDTO));
-        return UserDTO.convertToUserDTO(user);
+        return DTOConvert.convertToUserDTO(user);
     }
     public UserDTO delete(long userId) {
         Optional<User> user = userRepository.findById(userId);
@@ -44,7 +45,7 @@ public class UserService {
     public UserDTO findByCpf(String cpf) {
         User user = userRepository.findByCpf(cpf);
         if (user != null) {
-            return UserDTO.convertToUserDTO(user);
+            return DTOConvert.convertToUserDTO(user);
         }
         return null;
     }
@@ -52,7 +53,7 @@ public class UserService {
         List<User> usuarios = userRepository.queryByNomeLike(name);
         return usuarios
                 .stream()
-                .map(UserDTO::convertToUserDTO)
+                .map(DTOConvert::convertToUserDTO)
                 .collect(Collectors.toList());
     }
 }

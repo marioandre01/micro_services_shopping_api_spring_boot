@@ -1,8 +1,10 @@
 package com.mario.backend.user.model;
 
-import com.mario.backend.user.dto.UserDTO;
+
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.mario.backend.dto.UserDTO;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

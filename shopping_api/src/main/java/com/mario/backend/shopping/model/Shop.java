@@ -15,7 +15,7 @@ import javax.persistence.JoinColumn;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.mario.backend.shopping.dto.ShopDTO;
+import com.mario.backend.dto.ShopDTO;
 
 import lombok.Data;
 

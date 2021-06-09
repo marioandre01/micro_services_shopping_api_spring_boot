@@ -1,4 +1,4 @@
-package com.mario.backend.shopping.dto;
+package com.mario.backend.dto;
 
 import java.util.Date;
 import java.util.List;
@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.CreationTimestamp;
-
-import com.mario.backend.shopping.model.Item;
-import com.mario.backend.shopping.model.Shop;
+//import org.hibernate.annotations.CreationTimestamp;
+//
+//import com.mario.backend.shopping.model.Item;
+//import com.mario.backend.shopping.model.Shop;
 
 import lombok.Data;
 
@@ -35,20 +35,4 @@ public class ShopDTO {
 	
 	// get and sets
 	
-	public static ShopDTO convertToShopDTO(Shop shop) {
-		
-		ShopDTO shopDTO = new ShopDTO();
-		
-		shopDTO.setUserIdentifier(shop.getUserIdentifier());
-		shopDTO.setTotal(shop.getTotal());
-		shopDTO.setDate(shop.getDate());
-
-		shopDTO.setItems(shop
-				.getItems()
-				.stream()
-				.map(ItemDTO::convertToItemDTO)
-				.collect(Collectors.toList()));
-		
-		return shopDTO;
-	}
 }

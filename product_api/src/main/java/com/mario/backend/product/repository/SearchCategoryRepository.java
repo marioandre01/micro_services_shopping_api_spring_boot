@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.query.Param;
 
-import com.mario.backend.product.dto.ProductByCategoryDTO;
+import com.mario.backend.dto.ProductByCategoryDTO;
 import com.mario.backend.product.model.Product;
 
 public interface SearchCategoryRepository {

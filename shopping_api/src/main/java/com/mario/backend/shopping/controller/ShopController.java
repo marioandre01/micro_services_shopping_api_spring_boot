@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mario.backend.shopping.dto.ShopDTO;
-import com.mario.backend.shopping.dto.ShopReportDTO;
+import com.mario.backend.dto.ShopDTO;
+import com.mario.backend.dto.ShopReportDTO;
 import com.mario.backend.shopping.service.ShopService;
 
 @RestController

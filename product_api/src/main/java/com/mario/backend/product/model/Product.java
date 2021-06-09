@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.mario.backend.product.dto.ProductDTO;
+import com.mario.backend.dto.ProductDTO;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.mario.backend.shopping.dto;
+package com.mario.backend.dto;
 
 import lombok.Data;
 

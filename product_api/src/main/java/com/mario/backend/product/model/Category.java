@@ -5,8 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.mario.backend.product.dto.CategoryDTO;
-import com.mario.backend.product.dto.ProductDTO;
+import com.mario.backend.dto.CategoryDTO;
 
 import lombok.Data;
 

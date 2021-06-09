@@ -1,8 +1,8 @@
-package com.mario.backend.product.dto;
+package com.mario.backend.dto;
 
 import javax.validation.constraints.NotNull;
 
-import com.mario.backend.product.model.Category;
+//import com.mario.backend.product.model.Category;
 
 import lombok.Data;
 
@@ -19,14 +19,5 @@ public class CategoryDTO {
 	private String nome;
 	
 	// gets e sets
-	
-	public static CategoryDTO convertToCategoryDTO(Category category) {
-		
-		CategoryDTO categoryDTO = new CategoryDTO();
-		
-		categoryDTO.setId(category.getId());
-		categoryDTO.setNome(category.getNome());
-		
-		return categoryDTO;
-	}
+
 }

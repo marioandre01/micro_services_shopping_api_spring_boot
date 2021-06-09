@@ -2,7 +2,7 @@ package com.mario.backend.shopping.model;
 
 import javax.persistence.Embeddable;
 
-import com.mario.backend.shopping.dto.ItemDTO;
+import com.mario.backend.dto.ItemDTO;
 
 import lombok.Data;
 

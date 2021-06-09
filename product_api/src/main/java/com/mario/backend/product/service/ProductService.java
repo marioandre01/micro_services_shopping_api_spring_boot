@@ -7,11 +7,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mario.backend.product.dto.ProductByCategoryDTO;
-import com.mario.backend.product.dto.ProductDTO;
 import com.mario.backend.product.model.Product;
 import com.mario.backend.product.repository.ProductRepository;
-
+import com.mario.backend.dto.ProductByCategoryDTO;
+import com.mario.backend.dto.ProductDTO;
+import com.mario.backend.product.convert.DTOConvert;
 import com.mario.backend.product.exception.ProductNotFoundException;
 
 @Service
@@ -26,7 +26,7 @@ public class ProductService {
 		
 		return products
 		.stream()
-		.map(ProductDTO::convertToProductDTO)
+		.map(DTOConvert::convertToProductDTO)
 		.collect(Collectors.toList());
 	}
 	
@@ -49,7 +49,7 @@ public class ProductService {
 		Product product = productRepository.findByProductIdentifier(productIdentifier);
 		
 		if (product != null) {
-			return ProductDTO.convertToProductDTO(product);
+			return DTOConvert.convertToProductDTO(product);
 		}
 		
 		return null;
@@ -59,7 +59,7 @@ public class ProductService {
 		
 		Product product = productRepository.save(Product.convertToProduct(productDTO));
 		
-		return ProductDTO.convertToProductDTO(product);
+		return DTOConvert.convertToProductDTO(product);
 	}
 	
 	public ProductDTO delete(long ProductId) throws ProductNotFoundException {

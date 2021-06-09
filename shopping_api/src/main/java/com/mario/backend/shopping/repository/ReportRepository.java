@@ -3,7 +3,7 @@ package com.mario.backend.shopping.repository;
 import java.util.Date;
 import java.util.List;
 
-import com.mario.backend.shopping.dto.ShopReportDTO;
+import com.mario.backend.dto.ShopReportDTO;
 import com.mario.backend.shopping.model.Shop;
 
 

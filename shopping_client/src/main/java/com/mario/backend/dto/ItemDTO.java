@@ -1,9 +1,9 @@
-package com.mario.backend.shopping.dto;
+package com.mario.backend.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import com.mario.backend.shopping.model.Item;
+//import com.mario.backend.shopping.model.Item;
 
 import lombok.Data;
 
@@ -22,13 +22,4 @@ public class ItemDTO {
 	
 	// get and sets
 	
-	public static ItemDTO convertToItemDTO(Item item) {
-		
-		ItemDTO itemDTO = new ItemDTO();
-		
-		itemDTO.setProductIdentifier(item.getProductIdentifier());
-		itemDTO.setPrice(item.getPrice());
-		
-		return itemDTO;
-	}
 }

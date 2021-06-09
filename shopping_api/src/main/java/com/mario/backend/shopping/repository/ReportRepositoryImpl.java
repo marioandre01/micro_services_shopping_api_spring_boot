@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import com.mario.backend.shopping.dto.ShopReportDTO;
+import com.mario.backend.dto.ShopReportDTO;
 import com.mario.backend.shopping.model.Shop;
 
 public class ReportRepositoryImpl implements ReportRepository{

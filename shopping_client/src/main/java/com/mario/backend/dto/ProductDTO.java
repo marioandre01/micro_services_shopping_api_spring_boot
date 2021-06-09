@@ -1,9 +1,9 @@
-package com.mario.backend.product.dto;
+package com.mario.backend.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import com.mario.backend.product.model.Product;
+//import com.mario.backend.product.model.Product;
 
 import lombok.Data;
 
@@ -31,19 +31,4 @@ public class ProductDTO {
 	
 	// get e sets
 	
-	public static ProductDTO convertToProductDTO(Product product) {
-		
-		ProductDTO productDTO = new ProductDTO();
-		
-		productDTO.setNome(product.getNome());
-		productDTO.setPreco(product.getPreco());
-		productDTO.setProductIdentifier(
-		product.getProductIdentifier());
-		productDTO.setDescricao(product.getDescricao());
-		
-		if (product.getCategory() != null) {
-			productDTO.setCategory(CategoryDTO.convertToCategoryDTO(product.getCategory()));
-		}
-		return productDTO;
-	}
 }
