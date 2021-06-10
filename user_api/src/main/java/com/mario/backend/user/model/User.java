@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Data // gera os gets e sets
-@Entity
+@Entity(name="user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,7 @@ public class User {
     private String endereco;
     private String email;
     private String telefone;
+    private String key;
 
     @CreationTimestamp //gerar timestamp automaticamente ao criar um user
     private Date dataCadastro;
@@ -38,6 +39,7 @@ public class User {
         user.setEmail(userDTO.getEmail());
         user.setTelefone(userDTO.getTelefone());
         user.setDataCadastro(userDTO.getDataCadastro());
+        user.setKey(userDTO.getKey());
 
         return user;
     }

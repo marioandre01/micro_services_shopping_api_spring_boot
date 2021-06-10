@@ -12,6 +12,7 @@ import com.mario.backend.dto.ItemDTO;
 import com.mario.backend.dto.ProductDTO;
 import com.mario.backend.dto.ShopDTO;
 import com.mario.backend.dto.ShopReportDTO;
+import com.mario.backend.dto.UserDTO;
 import com.mario.backend.shopping.convert.DTOConvert;
 import com.mario.backend.shopping.model.Shop;
 import com.mario.backend.shopping.repository.ShopRepository;
@@ -70,15 +71,22 @@ public class ShopService {
 		return null;
 	}
 	
-	public ShopDTO save(ShopDTO shopDTO) {
+	public ShopDTO save(ShopDTO shopDTO, String key) {
 		
-		if (userService.getUserByCpf(shopDTO.getUserIdentifier()) == null) {
-			return null;
-		}
+		UserDTO userDTO = userService.getUserByCpf(shopDTO.getUserIdentifier(), key);
 		
-		if (!validateProducts(shopDTO.getItems())) {
-			return null;
-		}
+		System.out.println("response2: "+ userDTO);
+		System.out.println("response-nome: "+ userDTO.getNome());
+		
+		validateProducts(shopDTO.getItems());
+		
+//		if (userService.getUserByCpf(shopDTO.getUserIdentifier()) == null) {
+//			return null;
+//		}
+//		
+//		if (!validateProducts(shopDTO.getItems())) {
+//			return null;
+//		}
 	
 		shopDTO.setTotal(shopDTO.getItems()
 			.stream()

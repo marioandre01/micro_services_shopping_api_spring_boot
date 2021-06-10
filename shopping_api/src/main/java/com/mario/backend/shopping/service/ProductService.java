@@ -6,7 +6,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.mario.backend.dto.ProductDTO;
-import com.mario.backend.exception.UserNotFoundException;
+import com.mario.backend.exception.ProductNotFoundException;
 
 @Service
 public class ProductService {
@@ -23,7 +23,7 @@ public class ProductService {
 				return response.getBody();
 			
 			} catch (HttpClientErrorException.NotFound e) {
-				throw new UserNotFoundException();
+				throw new ProductNotFoundException();
 			}
 		}
 }

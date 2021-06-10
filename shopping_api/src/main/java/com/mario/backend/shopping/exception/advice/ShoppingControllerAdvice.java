@@ -23,7 +23,7 @@ import com.mario.backend.exception.UserNotFoundException;
 
 //@ResponseBody define que o retorno desse método será retornado no corpo da resposta.
 
-@ControllerAdvice(basePackages = "com.santana.java.back.end.controller")
+@ControllerAdvice(basePackages = "com.mario.backend.shopping.controller")
 public class ShoppingControllerAdvice {
 	
 //	Captura da exceção ProductNotFoundException no método handleUserNotFound

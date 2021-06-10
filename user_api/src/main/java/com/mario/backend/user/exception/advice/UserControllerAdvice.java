@@ -22,7 +22,7 @@ import com.mario.backend.exception.UserNotFoundException;
 
 //@ResponseBody define que o retorno desse método será retornado no corpo da resposta.
 
-@ControllerAdvice(basePackages = "com.mario.backend.controller")
+@ControllerAdvice(basePackages = "com.mario.backend.user.controller")
 public class UserControllerAdvice {
 	
 //	Captura da exceção UserNotFoundException no método handleUserNotFound

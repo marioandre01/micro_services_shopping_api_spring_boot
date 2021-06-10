@@ -14,6 +14,7 @@ public class UserDTO {
 	private String email;
 	private String telefone;
 	private Date dataCadastro;
+	private String key;
 	
 	//gets e sets
 
