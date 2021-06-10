@@ -354,22 +354,24 @@ Agora acessar as rotas da API para usar os seus serviços. Para acessar as rotas
 - post-shopping
 
   [POST] `http://localhost:8082/shopping`
+
+  No Header do POST colocar:
+
+  key: UUID_do-usuário
+
+  ex: 
+  key: fe3b3c57-d672-4618-ac1e-74fb0e0da5af
+
   #### Corpo da mensagem (json): 
   ```bash   
     {
-      "userIdentifier":"Mario",
+      "userIdentifier":"47",
       "items": [
         {
-          "productIdentifier":"d1",
-          "price":"100"
+          "productIdentifier":"tv"
         },
         {
-          "productIdentifier":"d2",
-          "price":"299"
-        },
-        {
-          "productIdentifier":"d3",
-          "price":"50"
+          "productIdentifier":"cama"
         }
       ]
     }
@@ -377,21 +379,17 @@ Agora acessar as rotas da API para usar os seus serviços. Para acessar as rotas
   #### Resposta da mensagem (json): 
   ```bash   
     {
-      "userIdentifier": "Mario",
-      "total": 449.0,
-      "date": "2021-06-02T17:57:01.959+00:00",
+      "userIdentifier": "47",
+      "total": 4200.0,
+      "date": "2021-06-10T18:34:06.264+00:00",
       "items": [
         {
-          "productIdentifier": "d1",
-          "price": 100.0
+          "productIdentifier": "tv",
+          "price": 2100.0
         },
         {
-          "productIdentifier": "d2",
-          "price": 299.0
-        },
-        {
-          "productIdentifier": "d3",
-          "price": 50.0
+          "productIdentifier": "cama",
+          "price": 2100.0
         }
       ]
     }
